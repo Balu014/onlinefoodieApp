@@ -1,0 +1,42 @@
+<div class="container-fluid">
+    <div class="main-sec" >
+        <div class="header">
+            <h2>Menu</h2>
+            <input type="text" class="search" [(ngModel)]="term" placeholder="Search here...">
+            <div class="view-btns">
+                <button class="btn btn-dark" *ngIf="viewtype == false" (click)="OnlistView()"><i class="fa fa-list" aria-hidden="true"></i>&nbsp; List</button>
+                <button class="btn btn-dark" *ngIf="viewtype == true" (click)="OngridView()"><i class="fa fa-th-large" aria-hidden="true"></i>&nbsp; Grid</button>
+            </div>
+        </div>
+
+        
+        <div class="card  hotel-list"  [ngStyle]="viewtype ? listView1 : gridView1" *ngFor="let details of menu | filter:term ">
+
+              <div class="hotel-card" [ngStyle]="viewtype ? listView : gridView" >
+                  
+                    <div class="hotel-img">
+                        <img class="hotel-img"[ngStyle]="viewtype ? imgwidthDec : imgwidthInc" src="{{details.img}}" >
+                    </div>
+
+                    <div class="hotel-details">
+                        <div class="hotel-name"  >
+                            <div [ngStyle]="viewtype ? listfont : gridfont">{{details.dish}}</div>
+                            
+                        </div>
+                        <div class=" hotel-loc" [ngStyle]="viewtype ? listCartbtns : gridCartbtns">
+                            <div [ngStyle]="viewtype ? listfont : gridfont">₹ {{details.cost}}</div>
+                            <div class="cartBtns">
+                                <button type="button" class="btn btns btn-dark" (click)="addItems(details)"><i class="fa fa-plus-circle" aria-hidden="true"></i></button>&nbsp; 
+                                <span class="quantity">{{details.quantity}}</span> &nbsp; 
+                                <button type="button" class="btn btns btn-dark" (click)="removeItems(details)"><i class="fa fa-minus-circle" aria-hidden="true"></i></button>
+                                <div class="addbtn mt-2">
+                                    <button type="button" class="btn btn-dark cartbtn"(click)="addCart(details)">Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+              </div> 
+        </div>
+    </div>
+      
+</div>

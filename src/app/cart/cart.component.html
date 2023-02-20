@@ -1,0 +1,92 @@
+<div class="container-fluid">
+    <div class="main-sec">
+        <div class="header">
+            <h2>Cart</h2>
+        </div>    
+        <div class="table-responsive-sm" *ngIf=" getCartDetails">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <td>Image</td>
+                        <td>Price</td>
+                        <td>Quantity</td>
+                        <td>Sub Total</td>
+                        <td>Remove</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let items of getCartDetails">
+                        <td class="img-sec"><img src="{{items.img}}" alt="pizza" ></td>
+                        <td class="price">₹ {{items.cost}}</td>
+                        <td><button type="button" class="btn btns btn-dark" (click)="incQ(items.menu_id, items.quantity)"><i class="fa fa-plus-circle" aria-hidden="true"></i></button>&nbsp; <span class="quantity">{{items.quantity}}</span> &nbsp; <button type="button" class="btn btns btn-dark" (click)="decQ(items.menu_id, items.quantity)"><i class="fa fa-minus-circle" aria-hidden="true"></i></button></td>
+                        <td class="price">₹ {{items.quantity * items.cost}}</td>
+                        <td><i class="fa fa-trash removebtn" aria-hidden="true" (click)="removeOne(items.menu_id)"></i></td>
+                        
+                    </tr>
+                </tbody>
+            </table>
+        </div> 
+        <div class="footer">
+            <div ><strong>Total:</strong> <i class="price"> ₹ {{totalAmt}}</i></div>
+            <button class="btn proceed " data-bs-toggle="modal" data-bs-target="#myModal">Procced</button>
+            <button class="btn btn-success clear" (click)="removeCart()">Remove All</button>
+        </div>
+
+
+
+    </div>
+</div>    
+
+
+<!-- The Modal -->
+<div class="modal" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+  
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Order Details</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+  
+        <!-- Modal body -->
+        <div class="modal-body">
+            <div class="form-sec row">
+                <form [formGroup]="formdata" (ngSubmit)="Onpost( )" >
+                    <div class="form-group">
+                        <label>Name:</label>
+                      <input type="name" class="form-control" formControlName="name" id="email" placeholder="Enter your Name" [(ngModel)]="costomerName" name="email">
+                      <!-- error msg -->
+                      <span class="noinput" *ngIf="userName && userName.invalid && userName.touched">Please Enter Your Name</span> <br>
+                    </div>
+                    <div class="form-group">
+                        <label>Email:</label>
+                      <input type="email" class="form-control" formControlName="email" id="pwd" placeholder="Enter your email adderess" name="pswd">
+                      <!-- error msg -->
+                      <span class="noinput" *ngIf="userEmail && userEmail.invalid && userEmail.touched">Please Enter Your Email </span><br>
+                    </div>
+                    <div class="form-group">
+                        <label>Address:</label>
+                       <input type="text" class="form-control" formControlName="message" placeholder="Enter your Address">
+                       <!-- error msg -->
+                       <span class="noinput" *ngIf="userMessage && userMessage.invalid && userMessage.touched">Please Enter Your Address </span><br>
+                    </div>
+                    <div class="totalcost">
+                        Grand Total :  ₹ {{totalAmt}}
+                    </div>
+                      <div class=" form-group but">
+                          <button class="btn btn-danger" id="view" type="submit" [disabled]="formdata.invalid" data-bs-dismiss="modal">Place the order </button>
+                      </div>
+                </form>   
+            </div>
+        </div>
+  
+        <!-- Modal footer
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger clear" data-bs-dismiss="modal">Place The Order</button>
+        </div> -->
+  
+      </div>
+    </div>
+  </div>
+  

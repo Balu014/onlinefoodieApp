@@ -1,0 +1,29 @@
+.main-sec{margin: 30px 100px 30px 100px;}
+.header .search{height: 40px; border-radius: 5px; border: none; padding: 5px;}
+.header input::placeholder{font-style: italic;}
+.header input:focus{box-shadow: none !important; border: none !important;}
+
+/* .main-sec .table{border-color: #000;} */
+.main-sec .table td img{width: 100%;}
+.main-sec .table td.img-sec{width:30%}
+.main-sec .table td{text-align: center;}
+.main-sec .table td.price{text-decoration: underline; color: rgb(15, 81, 224);}
+.main-sec .table thead td{font-weight: bold;text-align: center;}
+.main-sec .table td .removebtn{font-size: 30px;}
+
+.btns{width: 38px;font-size: 22px;font-weight:bold;text-align: center;padding: 0px;border-radius: 50%;}
+.btn:focus{box-shadow: none !important; background-color: transparent; border: 1px solid #000; color: #000; transition: 0.4s;}
+.footer{ width: 100%; display: inline-flex; justify-content: space-between;}
+.footer .price{text-decoration: underline; color: rgb(15, 81, 224); font-weight: bold;}
+.removebtn{cursor: pointer;}
+.clear{background-color: rgb(243, 69, 69);}
+.clear:focus{background-color: rgb(243, 69, 69); color: #FFF; border: 1px solid rgb(243, 69, 69);}
+.noinput{color: red; font-style: italic;}
+.totalcost{text-align: center; margin-bottom: 10px;font-weight: bolder;}
+.form-group.but{text-align: center; }
+.modal-body input:focus{box-shadow: 0px !important;}
+@media(max-width: 600px){
+    .main-sec{margin: 10px 10px 10px 10px;}
+    .btns{width: 17px; font-size:9px;}
+    /* .quntBtn{width: 17px; font-size: 13px;} */
+}

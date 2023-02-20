@@ -1,0 +1,128 @@
+/* You can add global styles to this file, and also import other style files */
+/* *{margin: 0; padding: 0;} */
+.light-theme{
+    --background-color: #e8e8e8;
+    --text-color: #080808;
+    --card-color: #FFF;
+    --boxshadow-color : 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    --btn-color:#024c97;
+    --btntext-color:#FFF;
+    --btn-border: 1px solid  #024c97;
+    --btnfoucs-border: 1px solid  #024c97;
+    --btnfoucs-color: #024c97;
+    --searchBg-color:#FFF;
+    --searchPlaceholder-color:#212429;
+    --search-color:#212429;
+    --tableStrip-color:#DCDCDC;
+    --navbarBackground-color:#024c97;
+    --viewbtnbg-color:#024c97;
+    --viewbtn-color: #FFF;
+    --proceedbtn-color:#024c97;
+}
+.dark-theme{
+    --background-color: #080808;
+    --text-color: #FFF;
+    --card-color: #212429;
+    --boxshadow-color : 0 2px 4px 0 rgb(255, 255, 255), 1px -3px 10px 0 rgb(255, 255, 255);
+    --btn-color: #080808;
+    --btntext-color:#FFF ;
+    --btnfoucs-border: 1px solid  #fff;
+    --btnfoucs-color: #fff;
+    --searchBg-color:#212429;
+    --searchPlaceholder-color:#FFF;
+    --search-color:#FFF;
+    --tableStrip-color:#212429;
+    --navbarBackground-color:#212429;
+    --viewbtnbg-color: #212429;
+    --viewbtn-color: #FFF;
+    --proceedbtn-color:#212429;
+    
+}
+body{
+    background-color: var(--background-color);
+    transition: all .6s ease-in-out;
+    padding: 0px !important;
+}
+.navbar{
+    background-color: var(--navbarBackground-color) !important;
+}
+.main-sec .header h2{
+    color: var(--text-color);
+}
+.main-sec .header .search{
+    background-color: var(--searchBg-color);
+    color: var(--search-color);
+}
+.main-sec .header input::placeholder{
+    color: var(--searchPlaceholder-color);
+    
+}
+.main-sec .header .view-btns .btn{
+    background-color: var(--viewbtnbg-color);
+    color: var(--viewbtn-color);
+}
+.main-sec .hotel-list{
+    background-color: var(--card-color);
+}
+.main-sec .hotel-list:hover{
+    box-shadow: var(--boxshadow-color);
+}
+.main-sec .hotel-list .hotel-details{
+    color: var(--text-color); 
+}
+.main-sec .hotel-list .btn{
+    background-color: var(--btn-color);
+    color: var(--btntext-color);
+    border:var(--btn-border)
+}
+.main-sec .hotel-list .btn:focus{
+    color: var(--btnfoucs-color);
+    border: var(--btnfoucs-border);
+}
+.main-sec .table td{
+    color: var(--text-color);
+}
+.main-sec .table .btn{
+    background-color: var(--btn-color);
+    color: var(--btntext-color);
+}
+.main-sec .table .btn:focus{
+    color: var(--btnfoucs-color);
+    border: var(--btnfoucs-border);
+}
+.main-sec .table-striped>tbody>tr:nth-of-type(odd) {
+    --bs-table-accent-bg: var(--tableStrip-color) !important;
+}
+.main-sec .footer{
+    color: var(--text-color);
+}
+.main-sec .footer .proceed{
+    background-color: var(--viewbtnbg-color);
+    color: var(--viewbtn-color);
+}
+.main-sec .footer .proceed:focus{
+    color: var(--btnfoucs-color);
+    border: var(--btnfoucs-border);
+}
+.modal-content{
+    background-color: var(--card-color);
+}
+.modal-title{
+    color: var(--text-color);
+}
+.modal-body{
+    color: var(--text-color);
+}
+.modal-body input{
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+.swal2-container.swal2-center>.swal2-popup {
+    background-color: var(--card-color) !important;
+}
+.swal2-title{
+    color: var(--text-color) !important ;
+}
+.swal2-html-container{
+    color: var(--text-color) !important;
+}

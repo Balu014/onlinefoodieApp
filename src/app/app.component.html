@@ -1,0 +1,18 @@
+<div class="container-fluid">
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <div class="Brand tw"><strong>Online<span>Foodieee</span></strong></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        <div class="header collapse navbar-collapse " id="collapsibleNavbar">
+          <a class="navbar-brand " routerLink="/home" routerLinkActive="active" href="#">Home</a>
+          <a class="navbar-brand " routerLink="/cart" href="#">Cart <span class="badge badge-light">{{cartItems}}</span></a>
+          <button class="btn btn-success mode" (click)="switchTheme()" ><i class="fa fa-moon-o" *ngIf="isMode == true" (click)="darkicon()" aria-hidden="true" ></i> <i class="fa fa-sun-o" (click)="dayicon()" *ngIf="isMode == false" aria-hidden="true"></i></button>
+        </div>
+    </nav>
+
+
+
+    
+</div>
+<router-outlet></router-outlet>
